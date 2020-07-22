@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '53kp8nxp(mcrv(7)!zrb*4-czlef$tj=9b785oyq71myjl)t7('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['admin.detective.moscow']
 
 
 # Application definition
@@ -108,7 +108,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -127,6 +126,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/l/legalro8/legalro_backend/static/'
+
+
+STATICFILES_DIRS = ['/home/l/legalro8/legalro_backend/static/',
+                '/home/l/legalro8/legalro_backend/public/']
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 # mine
 MEDIA_URL = '/media/'
@@ -138,3 +153,7 @@ EMAIL_PORT = 2525
 EMAIL_HOST_USER = 'svobodinang@mail.ru'
 EMAIL_HOST_PASSWORD = '27198y'
 EMAIL_USE_TLS = True
+
+
+print(STATIC_URL, STATIC_URL)
+print(STATICFILES_DIRS, STATICFILES_DIRS)

@@ -1,0 +1,1 @@
+/home/l/legalro8/legalro_backend/static/admin/css/vendor/select2/LICENSE-SELECT2.md
