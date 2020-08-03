@@ -129,15 +129,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/home/l/legalro8/legalro_backend/static/'
 
 
-STATICFILES_DIRS = ['/home/l/legalro8/legalro_backend/static/',
-                '/home/l/legalro8/legalro_backend/public/']
-
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
-
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -153,7 +144,4 @@ EMAIL_PORT = 2525
 EMAIL_HOST_USER = 'svobodinang@mail.ru'
 EMAIL_HOST_PASSWORD = '27198y'
 EMAIL_USE_TLS = True
-
-
-print(STATIC_URL, STATIC_URL)
-print(STATICFILES_DIRS, STATICFILES_DIRS)
+use_ssl=True
