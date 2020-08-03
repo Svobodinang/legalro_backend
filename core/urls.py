@@ -1,4 +1,4 @@
-# core/urls.py
+# detective/urls.py
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import send_email, GeneralInfoViewSet, RunTitleViewSet, GarantyViewSet, BenefitViewSet, ServicesViewSet
