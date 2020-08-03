@@ -25,12 +25,17 @@ SECRET_KEY = '53kp8nxp(mcrv(7)!zrb*4-czlef$tj=9b785oyq71myjl)t7('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # admin tools
+    'admin_tools',
+    'admin_tools.theming',
+    'admin_tools.menu',
+    'admin_tools.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +45,7 @@ INSTALLED_APPS = [
     # mine
     'rest_framework',
     'corsheaders',
-    'core'
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -127,7 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # mine
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -135,6 +140,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # mail
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525
-EMAIL_HOST_USER = 'svobodinang@mail.ru'
-EMAIL_HOST_PASSWORD = '27198y'
+EMAIL_HOST_USER = 'detective.moscow@bk.ru'
+EMAIL_HOST_PASSWORD = 'DetMSK64'
 EMAIL_USE_TLS = True

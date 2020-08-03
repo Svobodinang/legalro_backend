@@ -10,11 +10,11 @@ from .models import GeneralInfo, RunTitle, Garanty, Benefit, Services
 
 @api_view(['POST'])
 def send_email(request):
-    recipients = ['svobodinang@mail.ru']
+    recipients = ['detective.moscow@bk.ru']
     print(request.data)
     message = 'Имя: ' + request.data['name'] + \
         '\nТелефон: ' + request.data['tel']
-    send_mail('Позвонить', message, 'svobodinang@mail.ru', recipients)
+    send_mail('Запрос на звонок с сайта', message, 'detective.moscow@bk.ru', recipients)
     return HttpResponse('ok')
 
 
