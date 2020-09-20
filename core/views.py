@@ -11,7 +11,6 @@ from .models import GeneralInfo, RunTitle, Garanty, Benefit, Services
 @api_view(['POST'])
 def send_email(request):
     recipients = ['detective.moscow@bk.ru']
-    print(request.data)
     message = 'Имя: ' + request.data['name'] + \
         '\nТелефон: ' + request.data['tel']
     send_mail('Запрос на звонок с сайта', message, 'detective.moscow@bk.ru', recipients)
