@@ -15,4 +15,15 @@ class GeneralInfo(models.Model):
         verbose_name_plural = 'Основная информация'
 
     def __str_(self):
-        return self.logo
+        return self.mainTitle
+
+class Garanty(models.Model):
+    picture = models.FileField()
+    title = models.CharField(max_length=100, default='')
+
+    class Meta:
+        verbose_name = 'Гарантии'
+        verbose_name_plural = 'Гарантии'
+
+    def __str_(self):
+        return self.title
