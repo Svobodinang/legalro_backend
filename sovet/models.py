@@ -9,6 +9,13 @@ class GeneralInfo(models.Model):
     formTitle = models.CharField(max_length=100, default='')
     formText = models.CharField(max_length=100, default='')
     footerSlogan = models.CharField(max_length=100, default='')
+    companyName = models.CharField(max_length=100, default='')
+    adress = models.CharField(max_length=100, default='')
+    telephone = models.CharField(max_length=100, default='')
+    email = models.CharField(max_length=100, default='')
+    facebook = models.CharField(max_length=100, default='')
+    vk = models.CharField(max_length=100, default='')
+    telegram = models.CharField(max_length=100, default='')
 
     class Meta:
         verbose_name = 'Основная информация'
