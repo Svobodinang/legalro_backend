@@ -22,7 +22,7 @@ class GeneralInfo(models.Model):
         verbose_name = 'Основная информация'
         verbose_name_plural = 'Основная информация'
 
-    def __str_(self):
+    def __str__(self):
         return self.mainTitle
 
 
@@ -34,7 +34,7 @@ class Garanty(models.Model):
         verbose_name = 'Гарантии'
         verbose_name_plural = 'Гарантии'
 
-    def __str_(self):
+    def __str__(self):
         return self.title
 
 
@@ -46,8 +46,9 @@ class Goals(models.Model):
         verbose_name = 'Цели'
         verbose_name_plural = 'Цели'
 
-    def __str_(self):
+    def __str__(self):
         return self.title
+
 
 class Docs(models.Model):
     document = models.FileField()
@@ -57,5 +58,35 @@ class Docs(models.Model):
         verbose_name = 'Документы'
         verbose_name_plural = 'Документы'
 
-    def __str_(self):
+    def __str__(self):
         return self.title
+
+
+class ServiceBlock(models.Model):
+    title = models.CharField(max_length=100, default='')
+    title2 = models.CharField(max_length=100, default='')
+    pageName = models.CharField(max_length=100, default='')
+    text = models.TextField()
+    picture = models.FileField()
+
+    class Meta:
+        verbose_name = 'Блок услуг'
+        verbose_name_plural = 'Блок услуг'
+
+    def __str__(self):
+        return self.title
+
+
+class ServiceSection(models.Model):
+    serviceBlock = models.ForeignKey(ServiceBlock, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100, default='')
+
+    class Meta:
+        verbose_name = 'Секция услуг'
+        verbose_name_plural = 'Секция услуг'
+
+    def __str__(self):
+        return self.title
+
+
+# class services(serviceSection)

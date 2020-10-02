@@ -14,7 +14,7 @@ class GeneralInfo(models.Model):
         verbose_name = 'Основная информация'
         verbose_name_plural = 'Основная информация'
 
-    def __str_(self):
+    def __str__(self):
         return self.logo
 
 
@@ -25,7 +25,7 @@ class RunTitle(models.Model):
         verbose_name = 'Заголовки'
         verbose_name_plural = 'Заголовки'
 
-    def __str_(self):
+    def __str__(self):
         return self.text
 
 
@@ -37,7 +37,7 @@ class Garanty(models.Model):
         verbose_name = 'Гарантии'
         verbose_name_plural = 'Гарантии'
 
-    def __str_(self):
+    def __str__(self):
         return self.title
 
 
@@ -49,7 +49,7 @@ class Benefit(models.Model):
         verbose_name = 'Преимущества'
         verbose_name_plural = 'Преимущества'
 
-    def __str_(self):
+    def __str__(self):
         return self.text
 
 
@@ -63,5 +63,5 @@ class Services(models.Model):
         verbose_name = 'Услуги'
         verbose_name_plural = 'Услуги'
 
-    def __str_(self):
+    def __str__(self):
         return self.title
