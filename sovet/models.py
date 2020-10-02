@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class GeneralInfo(models.Model):
     mainTitle = models.CharField(max_length=100, default='')
     slogan = models.CharField(max_length=100, default='')
@@ -24,6 +25,7 @@ class GeneralInfo(models.Model):
     def __str_(self):
         return self.mainTitle
 
+
 class Garanty(models.Model):
     picture = models.FileField()
     title = models.CharField(max_length=100, default='')
@@ -31,6 +33,29 @@ class Garanty(models.Model):
     class Meta:
         verbose_name = 'Гарантии'
         verbose_name_plural = 'Гарантии'
+
+    def __str_(self):
+        return self.title
+
+
+class Goals(models.Model):
+    picture = models.FileField()
+    title = models.CharField(max_length=100, default='')
+
+    class Meta:
+        verbose_name = 'Цели'
+        verbose_name_plural = 'Цели'
+
+    def __str_(self):
+        return self.title
+
+class Docs(models.Model):
+    document = models.FileField()
+    title = models.CharField(max_length=100, default='')
+
+    class Meta:
+        verbose_name = 'Документы'
+        verbose_name_plural = 'Документы'
 
     def __str_(self):
         return self.title

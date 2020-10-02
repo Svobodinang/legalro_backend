@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework import viewsets
 
-from .serializers import GeneralInfoSerializer, GarantySerializer
-from .models import GeneralInfo, Garanty
+from .serializers import GeneralInfoSerializer, GarantySerializer, GoalsSerializer, DocsSerializer
+from .models import GeneralInfo, Garanty, Goals, Docs
 
 
 @api_view(['POST'])
@@ -24,3 +24,11 @@ class GeneralInfoViewSet(viewsets.ModelViewSet):
 class GarantyViewSet(viewsets.ModelViewSet):
     serializer_class = GarantySerializer
     queryset = Garanty.objects.all()
+
+class GoalsViewSet(viewsets.ModelViewSet):
+    serializer_class = GoalsSerializer
+    queryset = Goals.objects.all()
+
+class DocsViewSet(viewsets.ModelViewSet):
+    serializer_class = DocsSerializer
+    queryset = Docs.objects.all()
