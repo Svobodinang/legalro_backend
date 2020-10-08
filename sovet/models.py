@@ -64,9 +64,9 @@ class Docs(models.Model):
 
 class ServiceBlock(models.Model):
     title = models.CharField(max_length=100, default='')
-    title2 = models.CharField(max_length=100, default='')
+    title2 = models.CharField(max_length=100, default='', blank=True)
     pageName = models.CharField(max_length=100, default='')
-    text = models.TextField()
+    text = models.TextField(blank=True)
     picture = models.FileField()
 
     class Meta:
@@ -91,9 +91,9 @@ class ServiceSection(models.Model):
 
 class Service(models.Model):
     serviceSection = models.ForeignKey(ServiceSection, on_delete=models.CASCADE)
-    accent = models.CharField(max_length=5, default='') 
-    title = models.CharField(max_length=100, default='')
-    text = models.TextField()
+    accent = models.CharField(max_length=5, default='', blank=True)
+    title = models.CharField(max_length=100, default='', blank=True)
+    text = models.TextField(blank=True)
 
     class Meta:
         verbose_name = 'Услуги'
