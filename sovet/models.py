@@ -89,4 +89,18 @@ class ServiceSection(models.Model):
         return self.title
 
 
+class Service(models.Model):
+    serviceSection = models.ForeignKey(ServiceSection, on_delete=models.CASCADE)
+    accent = models.CharField(max_length=5, default='') 
+    title = models.CharField(max_length=100, default='')
+    text = models.TextField()
+
+    class Meta:
+        verbose_name = 'Услуги'
+        verbose_name_plural = 'Услуги'
+
+    def __str__(self):
+        return self.title
+
+
 # class services(serviceSection)

@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework import viewsets
 
-from .serializers import GeneralInfoSerializer, GarantySerializer, GoalsSerializer, DocsSerializer, ServiceBlockSerializer, ServiceSectionSerializer
-from .models import GeneralInfo, Garanty, Goals, Docs, ServiceBlock, ServiceSection
+from .serializers import GeneralInfoSerializer, GarantySerializer, GoalsSerializer, DocsSerializer, ServiceBlockSerializer, ServiceSectionSerializer, ServiceSerializer
+from .models import GeneralInfo, Garanty, Goals, Docs, ServiceBlock, ServiceSection, Service
 
 
 @api_view(['POST'])
@@ -44,3 +44,7 @@ class ServiceBlockViewSet(viewsets.ModelViewSet):
 class ServiceSectionViewSet(viewsets.ModelViewSet):
     serializer_class = ServiceSectionSerializer
     queryset = ServiceSection.objects.all()
+
+class ServiceViewSet(viewsets.ModelViewSet):
+    serializer_class = ServiceSerializer
+    queryset = Service.objects.all()

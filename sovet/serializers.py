@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import GeneralInfo, Garanty, Goals,  Docs, ServiceBlock, ServiceSection
+from .models import GeneralInfo, Garanty, Goals,  Docs, ServiceBlock, ServiceSection, Service
 
 
 class GeneralInfoSerializer(serializers.ModelSerializer):
@@ -25,6 +25,7 @@ class DocsSerializer(serializers.ModelSerializer):
         model = Docs
         fields = '__all__'
 
+
 class ServiceBlockSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServiceBlock
@@ -34,4 +35,9 @@ class ServiceBlockSerializer(serializers.ModelSerializer):
 class ServiceSectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServiceSection
+        fields = '__all__'
+
+class ServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Service
         fields = '__all__'
