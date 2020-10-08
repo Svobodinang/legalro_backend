@@ -92,7 +92,7 @@ class ServiceSection(models.Model):
 class Service(models.Model):
     serviceSection = models.ForeignKey(ServiceSection, on_delete=models.CASCADE)
     accent = models.CharField(max_length=5, default='', blank=True)
-    title = models.CharField(max_length=100, default='', blank=True)
+    title = models.TextField(blank=True)
     text = models.TextField(blank=True)
 
     class Meta:
