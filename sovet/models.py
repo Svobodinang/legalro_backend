@@ -127,10 +127,11 @@ class PriceBlock(models.Model):
     def __str__(self):
         return self.priceSection.title + '. ' + self.title
 
+
 class Price(models.Model):
     priceBlock = models.ForeignKey(
         PriceBlock, on_delete=models.CASCADE)
-    title = models.CharField(max_length=100, default='')
+    title = models.TextField(blank=True)
     price = models.CharField(max_length=100, default='')
     text = models.TextField(blank=True)
 
