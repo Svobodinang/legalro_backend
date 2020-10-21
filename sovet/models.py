@@ -82,15 +82,16 @@ class ServiceSection(models.Model):
     title = models.CharField(max_length=100, default='')
 
     class Meta:
-        verbose_name = 'Секция услуг'
-        verbose_name_plural = 'Секция услуг'
+        verbose_name = 'Секции услуг'
+        verbose_name_plural = 'Секции услуг'
 
     def __str__(self):
         return self.title
 
 
 class Service(models.Model):
-    serviceSection = models.ForeignKey(ServiceSection, on_delete=models.CASCADE)
+    serviceSection = models.ForeignKey(
+        ServiceSection, on_delete=models.CASCADE)
     accent = models.CharField(max_length=5, default='', blank=True)
     title = models.TextField(blank=True)
     text = models.TextField(blank=True)
@@ -103,4 +104,39 @@ class Service(models.Model):
         return self.title
 
 
-# class services(serviceSection)
+class PriceSection(models.Model):
+    title = models.CharField(max_length=100, default='')
+
+    class Meta:
+        verbose_name = 'Секции цен'
+        verbose_name_plural = 'Секции цен'
+
+    def __str__(self):
+        return self.title
+
+
+class PriceBlock(models.Model):
+    priceSection = models.ForeignKey(
+        PriceSection, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100, default='', blank=True)
+
+    class Meta:
+        verbose_name = 'Блоки цен'
+        verbose_name_plural = 'Блоки цен'
+
+    def __str__(self):
+        return self.priceSection.title + '. ' + self.title
+
+class Price(models.Model):
+    priceBlock = models.ForeignKey(
+        PriceBlock, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100, default='')
+    price = models.CharField(max_length=100, default='')
+    text = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'Цены'
+        verbose_name_plural = 'Цены'
+
+    def __str__(self):
+        return self.title
